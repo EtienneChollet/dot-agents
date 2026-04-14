@@ -10,65 +10,10 @@ to compile and deploy.
 
 ```mermaid
 graph LR
-    subgraph "~/.agents/ (this repo)"
-        INST[INSTRUCTIONS.md]
-        A[agents/*.md]
-        S[skills/]
-        R[rules/]
-        CC[claude/]
-        PI[pi/]
-        P[projects/]
-    end
-
-    SYNC["harness_sync.py"]
-
-    INST --> SYNC
-    A --> SYNC
-    S --> SYNC
-    R --> SYNC
-    CC --> SYNC
-    PI --> SYNC
-    P --> SYNC
-
-    subgraph "Claude Code (~/.claude/)"
-        C1[CLAUDE.md]
-        C2[agents/]
-        C3[skills/]
-        C4[rules/]
-        C5[settings.json]
-        C6[hooks/]
-    end
-
-    subgraph "Pi (~/.pi/)"
-        P1[AGENTS.md]
-        P2[agents/]
-        P3[skills/]
-        P4[rules/]
-        P5[extensions/]
-    end
-
-    subgraph "Codex (~/.codex/)"
-        X1[config.toml]
-        X2[agents/]
-        X3[skills/]
-    end
-
-    SYNC -->|symlink| C1
-    SYNC -->|build| C2
-    SYNC -->|symlink| C3
-    SYNC -->|symlink| C4
-    SYNC -->|symlink| C5
-    SYNC -->|symlink| C6
-
-    SYNC -->|symlink| P1
-    SYNC -->|build| P2
-    SYNC -->|symlink| P3
-    SYNC -->|symlink| P4
-    SYNC -->|symlink| P5
-
-    SYNC -->|compile| X1
-    SYNC -->|build| X2
-    SYNC -->|copy| X3
+    A["~/.agents/"] --> S["harness_sync.py"]
+    S --> C["~/.claude/"]
+    S --> P["~/.pi/"]
+    S --> X["~/.codex/"]
 ```
 
 ## Quick Start
