@@ -1,0 +1,17 @@
+{
+  "env": {},
+  "permissions": {
+    "allow": [
+      "Glob",
+      "Grep",
+      "Read(*.py)",
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "hooks": {
+    "PreToolUse": [],
+    "SessionStart": [],
+    "Stop": []
+  }
+}

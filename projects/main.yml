@@ -1,0 +1,17 @@
+# Maps project names to filesystem paths per machine.
+# Keys under each project must match values returned by _detect_machine()
+# in scripts/harness_sync.py.
+#
+# Example:
+#
+# my-project:
+#   laptop: /home/user/projects/my-project
+#   server: /opt/projects/my-project
+#
+# To add project-specific agents, skills, or rules, create a subdirectory
+# at projects/<project-name>/ with the same structure as the global dirs.
+
+example-project:
+  # Replace these with your actual machine names and paths:
+  # laptop: /home/user/projects/example-project
+  # server: /opt/projects/example-project
